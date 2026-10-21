@@ -1,0 +1,183 @@
+Peço desculpa, o código HTML acabou por não ficar visível na mensagem anterior. Vou deixá-lo aqui completo e pronto a copiar para colocares no teu ficheiro `index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Felipe | Press Kit Oficial - Casa 6 Produções</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-zinc-800 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-widest text-white uppercase flex items-center gap-2">
+                <span class="text-amber-500">MF</span> <span class="text-xs tracking-normal text-zinc-400 font-normal">| Casa 6 Produções</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+                <a href="#sobre" class="hover:text-amber-500 transition-colors">Carreira</a>
+                <a href="#shows" class="hover:text-amber-500 transition-colors">Shows & Estilos</a>
+                <a href="#fotos" class="hover:text-amber-500 transition-colors">Galeria</a>
+                <a href="#contato" class="hover:text-amber-500 transition-colors">Contato</a>
+            </nav>
+            <a href="https://wa.me/5521989368930" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-5 py-2.5 rounded-full text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i> Contratar Show
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-zinc-950">
+        <div class="max-w-4xl mx-auto text-center z-10">
+            <span class="inline-block uppercase tracking-[0.3em] text-xs font-semibold text-amber-500 bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20 mb-6">
+                Press Kit Oficial & Mídia Kit
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white mb-6 uppercase">
+                Matheus Felipe
+            </h1>
+            <p class="text-lg md:text-2xl text-zinc-400 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                Da calmaria de Caetano ao swing de Seu Jorge. Versatilidade, identidade e energia única para o seu evento.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contato" class="w-full sm:w-auto bg-white hover:bg-zinc-200 text-zinc-950 font-bold px-8 py-4 rounded-full transition-all text-center">
+                    Falar com a Produção
+                </a>
+                <a href="#shows" class="w-full sm:w-auto bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white font-semibold px-8 py-4 rounded-full transition-all text-center">
+                    Ver Repertório e Estilos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carreira / Biografia -->
+    <section id="sobre" class="py-24 px-4 border-t border-zinc-900 bg-zinc-950">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Trajetória</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Raiz musical na Zona Oeste do Rio[cite: 2]</h3>
+                <p class="text-zinc-400 leading-relaxed mb-4">
+                    Nascido e criado na zona oeste do Rio de Janeiro[cite: 2], Matheus Felipe começou a cantar muito cedo. Aos 7 anos já interpretava em bares e rodas onde amigos de sua mãe se apresentavam[cite: 2].
+                </p>
+                <p class="text-zinc-400 leading-relaxed mb-6">
+                    Aos 15 anos iniciou sua trajetória profissional[cite: 2]. Ao longo dos anos, transitou por duplas sertanejas, blocos carnavalescos, pagode retrô e clássicos dos anos 80, imprimindo sempre a sua identidade marcante em cada projeto autoral e corporativo[cite: 2, 4].
+                </p>
+                <div class="flex items-center gap-6 text-sm text-zinc-300 border-t border-zinc-900 pt-6">
+                    <div>
+                        <span class="block text-2xl font-black text-white">15+</span>
+                        <span class="text-zinc-500">Anos de Carreira</span>
+                    </div>
+                    <div class="border-l border-zinc-800 pl-6">
+                        <span class="block text-2xl font-black text-white">RJ</span>
+                        <span class="text-zinc-500">Base Rio de Janeiro</span>
+                    </div>
+                    <div class="border-l border-zinc-800 pl-6">
+                        <span class="block text-2xl font-black text-white">100%</span>
+                        <span class="text-zinc-500">Presença de Palco</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl relative">
+                <div class="absolute -top-3 -right-3 bg-amber-500 text-zinc-950 font-bold text-xs uppercase px-3 py-1 rounded-full">
+                    Casa 6 Produções[cite: 2]
+                </div>
+                <h4 class="text-xl font-bold text-white mb-4">A Experiência Completa</h4>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                    Ideal para festivais, festas, casamentos, formaturas, eventos corporativos e confraternizações de todos os portes[cite: 3].
+                </p>
+                <ul class="space-y-3 text-sm text-zinc-300">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Show Acústico ou Banda Completa</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Repertório Personalizado para o Evento</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Lançamentos Autorais nas Plataformas[cite: 3]</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shows & Estilos -->
+    <section id="shows" class="py-24 px-4 bg-zinc-900/50 border-t border-zinc-900">
+        <div class="max-w-5xl mx-auto text-center mb-16">
+            <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Versatilidade</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-white">Estilos & Projetos</h3>
+            <p class="text-zinc-400 mt-2">Capacidade única de transitar por diversos gêneros com excelência.</p>
+        </div>
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
+                <i class="fa-solid fa-guitar text-2xl text-amber-500 mb-3"></i>
+                <h4 class="font-bold text-white mb-1">Sertanejo & Pier</h4>
+                <p class="text-xs text-zinc-400">Do universitário ao raiz.</p>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
+                <i class="fa-solid fa-music text-2xl text-amber-500 mb-3"></i>
+                <h4 class="font-bold text-white mb-1">MPB & Pop</h4>
+                <p class="text-xs text-zinc-400">Caetano, Lulu e contemporâneos[cite: 3].</p>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
+                <i class="fa-solid fa-drum text-2xl text-amber-500 mb-3"></i>
+                <h4 class="font-bold text-white mb-1">Retrô & Anos 80</h4>
+                <p class="text-xs text-zinc-400">Flashback e pagode clássico[cite: 2, 4].</p>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
+                <i class="fa-solid fa-microphone-lines text-2xl text-amber-500 mb-3"></i>
+                <h4 class="font-bold text-white mb-1">Autoral</h4>
+                <p class="text-xs text-zinc-400">Trabalho autêntico nas plataformas[cite: 3].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos / Assets -->
+    <section id="fotos" class="py-24 px-4 border-t border-zinc-900 bg-zinc-950">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Imprensa</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Galeria & Mídia</h3>
+            </div>
+            <a href="https://drive.google.com" target="_blank" class="mt-4 md:mt-0 text-sm font-semibold text-amber-500 hover:text-amber-400 flex items-center gap-2">
+                <i class="fa-solid fa-cloud-arrow-down"></i> Baixar Kit Completo (Fotos HD)
+            </a>
+        </div>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 h-64 rounded-2xl border border-zinc-800 flex items-center justify-center text-zinc-600">
+                <span class="text-sm">Foto de Show 01</span>
+            </div>
+            <div class="bg-zinc-900 h-64 rounded-2xl border border-zinc-800 flex items-center justify-center text-zinc-600">
+                <span class="text-sm">Foto de Show 02</span>
+            </div>
+            <div class="bg-zinc-900 h-64 rounded-2xl border border-zinc-800 flex items-center justify-center text-zinc-600">
+                <span class="text-sm">Foto de Show 03</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-24 px-4 bg-zinc-900/30 border-t border-zinc-900">
+        <div class="max-w-3xl mx-auto text-center bg-zinc-900 border border-zinc-800 p-8 md:p-12 rounded-3xl">
+            <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Booking & Management</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Vamos fechar negócio?</h3>
+            <p class="text-zinc-400 mb-8">Entre em contato direto com a Casa 6 Produções para disponibilidade de datas e orçamentos.</p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/5521989368930" target="_blank" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> (21) 98936-8930[cite: 18]
+                </a>
+                <a href="mailto:casa6producoes@gmail.com" class="w-full sm:w-auto bg-zinc-800 hover:bg-zinc-700 text-white font-semibold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-envelope"></i> casa6producoes@gmail.com[cite: 18]
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-zinc-900 text-center text-xs text-zinc-600">
+        <p>&copy; Casa 6 Produções. Todos os direitos reservados. Matheus Felipe[cite: 18].</p>
+    </footer>
+
+</body>
+</html>
+
+```
+
+Basta copiares todo este código, colá-lo no ficheiro `index.html` que criaste no GitHub e seguir para o deploy na Vercel!
