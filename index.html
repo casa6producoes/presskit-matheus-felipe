@@ -1,180 +1,625 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheus Felipe | Press Kit Oficial - Casa 6 Produções</title>
+    <title>Matheus Felipe | EPK - Casa 6 Produções</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        amberGold: '#E5A93C',
+                        amberDark: '#C18928',
+                        darkBg: '#0D0D0D',
+                        cardBg: '#171717',
+                        borderBg: '#262626',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E5A93C;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(229, 169, 60, 0.25);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 35px 0px rgba(229, 169, 60, 0.45);
+        }
+    </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-zinc-800 selection:text-white">
+<body class="bg-darkBg text-gray-200 font-sans antialiased selection:bg-amberGold selection:text-black">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
-        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-black tracking-widest text-white uppercase flex items-center gap-2">
-                <span class="text-amber-500">MF</span> <span class="text-xs tracking-normal text-zinc-400 font-normal">| Casa 6 Produções</span>
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-borderBg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-amberGold text-black font-extrabold text-xl flex items-center justify-center tracking-tighter group-hover:scale-105 transition-transform duration-300">
+                    MF
+                </div>
+                <div>
+                    <span class="block text-white font-bold text-lg leading-none tracking-wide">MATHEUS FELIPE</span>
+                    <span class="text-xs text-amberGold tracking-widest uppercase font-semibold">Casa 6 Produções</span>
+                </div>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
-                <a href="#sobre" class="hover:text-amber-500 transition-colors">Carreira</a>
-                <a href="#shows" class="hover:text-amber-500 transition-colors">Shows & Estilos</a>
-                <a href="#fotos" class="hover:text-amber-500 transition-colors">Galeria</a>
-                <a href="#contato" class="hover:text-amber-500 transition-colors">Contato</a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
+                <a href="#bio" class="hover:text-amberGold transition-colors">Biografia</a>
+                <a href="#repertorio" class="hover:text-amberGold transition-colors">Estilos & Mídia</a>
+                <a href="#galeria" class="hover:text-amberGold transition-colors">Fotos</a>
+                <a href="#downloads" class="hover:text-amberGold transition-colors">Press Assets</a>
+                <a href="#contato" class="hover:text-amberGold transition-colors">Contato</a>
             </nav>
-            <a href="https://wa.me/5521989368930" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-5 py-2.5 rounded-full text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp"></i> Contratar Show
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="https://wa.me/5521989368930?text=Olá!%20Vim%20pelo%20Presskit%20e%20gostaria%20de%20informações%20sobre%20shows%20do%20Matheus%20Felipe." 
+                   target="_blank" 
+                   class="bg-amberGold hover:bg-amberDark text-black font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg flex items-center gap-2 hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Booking / Shows</span>
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-borderBg px-4 pt-4 pb-6 space-y-4 text-center">
+            <a href="#bio" class="block text-gray-300 hover:text-amberGold py-2 font-medium">Biografia</a>
+            <a href="#repertorio" class="block text-gray-300 hover:text-amberGold py-2 font-medium">Estilos & Mídia</a>
+            <a href="#galeria" class="block text-gray-300 hover:text-amberGold py-2 font-medium">Fotos de Divulgação</a>
+            <a href="#downloads" class="block text-gray-300 hover:text-amberGold py-2 font-medium">Press Assets</a>
+            <a href="#contato" class="block text-gray-300 hover:text-amberGold py-2 font-medium">Contato</a>
+            <a href="https://wa.me/5521989368930?text=Olá!%20Vim%20pelo%20Presskit%20e%20gostaria%20de%20informações%20sobre%20shows%20do%20Matheus%20Felipe." 
+               target="_blank" 
+               class="inline-flex items-center justify-center w-full bg-amberGold hover:bg-amberDark text-black font-bold px-5 py-3 rounded-xl gap-2 mt-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Falar com Agenciamento</span>
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-zinc-950">
-        <div class="max-w-4xl mx-auto text-center z-10">
-            <span class="inline-block uppercase tracking-[0.3em] text-xs font-semibold text-amber-500 bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20 mb-6">
-                Press Kit Oficial & Mídia Kit
-            </span>
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white mb-6 uppercase">
-                Matheus Felipe
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Overlay Image with Gradient -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1920&auto=format&fit=crop" 
+                 alt="Matheus Felipe Live Background" 
+                 class="w-full h-full object-cover object-center opacity-25 filter brightness-75 scale-105 animate-pulse" 
+                 style="animation-duration: 8s;">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-darkBg via-transparent to-darkBg"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amberGold/10 border border-amberGold/30 text-amberGold font-semibold text-xs uppercase tracking-widest mb-6">
+                <i class="fa-solid fa-music"></i> Electronic Press Kit Oficial
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight mb-4">
+                MATHEUS <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberGold to-yellow-200">FELIPE</span>
             </h1>
-            <p class="text-lg md:text-2xl text-zinc-400 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-                Da calmaria de Caetano ao swing de Seu Jorge. Versatilidade, identidade e energia única para o seu evento.
+
+            <p class="text-xl sm:text-2xl text-gray-300 font-medium max-w-3xl mx-auto mb-8 italic">
+                "Da calmaria de Caetano ao swing de Seu Jorge."
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contato" class="w-full sm:w-auto bg-white hover:bg-zinc-200 text-zinc-950 font-bold px-8 py-4 rounded-full transition-all text-center">
-                    Falar com a Produção
+
+            <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                Uma experiência musical envolvente e versátil para festas, casamentos, formaturas, corporativos e grandes palcos.
+            </p>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="https://wa.me/5521989368930?text=Olá!%20Vim%20pelo%20Presskit%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20show." 
+                   target="_blank" 
+                   class="w-full sm:w-auto bg-amberGold hover:bg-amberDark text-black font-extrabold px-8 py-4 rounded-xl shadow-xl transition-all duration-300 flex items-center justify-center gap-3 hover:scale-105 glow-effect">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>CONTRATAR PARA SHOWS</span>
                 </a>
-                <a href="#shows" class="w-full sm:w-auto bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white font-semibold px-8 py-4 rounded-full transition-all text-center">
-                    Ver Repertório e Estilos
+                
+                <a href="#downloads" 
+                   class="w-full sm:w-auto bg-cardBg hover:bg-borderBg text-white border border-borderBg font-bold px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 hover:border-amberGold/50">
+                    <i class="fa-solid fa-file-pdf text-amberGold"></i>
+                    <span>DOWNLOAD PRESS KIT</span>
                 </a>
+            </div>
+
+            <!-- Management Stamp -->
+            <div class="mt-16 pt-8 border-t border-borderBg/50 flex flex-col items-center justify-center">
+                <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">PRODUÇÃO & MANAGEMENT</span>
+                <span class="text-gray-300 font-bold tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-house-circle-check text-amberGold"></i> CASA 6 PRODUÇÕES
+                </span>
             </div>
         </div>
     </section>
 
-    <!-- Carreira / Biografia -->
-    <section id="sobre" class="py-24 px-4 border-t border-zinc-900 bg-zinc-950">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Trajetória</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Raiz musical na Zona Oeste do Rio[cite: 2]</h3>
-                <p class="text-zinc-400 leading-relaxed mb-4">
-                    Nascido e criado na zona oeste do Rio de Janeiro[cite: 2], Matheus Felipe começou a cantar muito cedo. Aos 7 anos já interpretava em bares e rodas onde amigos de sua mãe se apresentavam[cite: 2].
+    <!-- Bio / Carreira Section -->
+    <section id="bio" class="py-20 bg-darkBg border-t border-borderBg/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Image Grid Frame -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-borderBg shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" 
+                             alt="Matheus Felipe no violão" 
+                             class="w-full h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="bg-amberGold text-black font-extrabold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">
+                                Desde cedo nos palcos
+                            </span>
+                            <h3 class="text-white text-xl font-bold">Identidade & Paixão pela Música</h3>
+                        </div>
+                    </div>
+                    <!-- Badge Overlay -->
+                    <div class="absolute -bottom-6 -right-6 bg-cardBg border border-amberGold/40 p-4 rounded-2xl hidden sm:flex items-center gap-4 shadow-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold/20 flex items-center justify-center text-amberGold font-extrabold text-2xl">
+                            15+
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Anos de Trajetória</p>
+                            <p class="text-gray-400 text-xs">Profissional na Música</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-amberGold font-semibold text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-user-ninja"></i> Sobre o Artista
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        História, Alma e Muita Bagagem Cultural
+                    </h2>
+                    
+                    <p class="text-gray-300 leading-relaxed">
+                        Nascido e criado na **Zona Oeste do Rio de Janeiro**, Matheus Felipe começou sua caminhada no universo musical muito cedo. Com apenas **7 anos de idade**, já cantava em bares, videokês e rodas de música acompanhando amigos da sua mãe.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Aos **15 anos**, iniciou oficialmente sua trajetória profissional. Ao longo do caminho, acumulou histórias e versatilidade em diversos projetos marcantes: passou por **duplas sertanejas, bloco carnavalesco, pagode retrô, clássicos dos anos 80**, além da consolidação do seu **trabalho autoral**.
+                    </p>
+
+                    <!-- Highlight Box -->
+                    <div class="p-6 rounded-xl bg-cardBg border border-borderBg relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-amberGold"></div>
+                        <p class="text-gray-200 font-medium italic">
+                            "Do romantismo de Lulu Santos ao RAP conceito de Marcelo D2, o show de Matheus Felipe conecta gerações e transforma qualquer evento em uma experiência inesquecível."
+                        </p>
+                    </div>
+
+                    <!-- Quick Tags -->
+                    <div class="pt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-cardBg border border-borderBg text-xs font-medium text-gray-300">
+                            📍 Rio de Janeiro
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-cardBg border border-borderBg text-xs font-medium text-gray-300">
+                            🎸 Voz & Violão / Banda Completa
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-cardBg border border-borderBg text-xs font-medium text-gray-300">
+                            🎉 Casamentos & Formaturas
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-cardBg border border-borderBg text-xs font-medium text-gray-300">
+                            🏢 Festas Corporativas & Exposição
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Repertório & Estilos -->
+    <section id="repertorio" class="py-20 bg-cardBg border-t border-borderBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 text-amberGold font-semibold text-xs uppercase tracking-widest mb-3">
+                    <i class="fa-solid fa-sliders"></i> Ecletismo no Palco
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Estilos & Experiência Musical
+                </h2>
+                <p class="text-gray-400 mt-4">
+                    Um repertório dinâmico e customizável preparado para atender a vibe exata do seu evento.
                 </p>
-                <p class="text-zinc-400 leading-relaxed mb-6">
-                    Aos 15 anos iniciou sua trajetória profissional[cite: 2]. Ao longo dos anos, transitou por duplas sertanejas, blocos carnavalescos, pagode retrô e clássicos dos anos 80, imprimindo sempre a sua identidade marcante em cada projeto autoral e corporativo[cite: 2, 4].
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                
+                <div class="p-6 rounded-2xl bg-darkBg border border-borderBg text-center hover:border-amberGold/50 transition-all duration-300 group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-guitar"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base mb-1">MPB</h3>
+                    <p class="text-xs text-gray-400">Caetano, Seu Jorge & Tim Maia</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkBg border border-borderBg text-center hover:border-amberGold/50 transition-all duration-300 group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hat-cowboy"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base mb-1">Sertanejo</h3>
+                    <p class="text-xs text-gray-400">Sucessos Atuais & Clássicos</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkBg border border-borderBg text-center hover:border-amberGold/50 transition-all duration-300 group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-drum"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base mb-1">Pagode</h3>
+                    <p class="text-xs text-gray-400">Pagode Retrô & Swingado</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkBg border border-borderBg text-center hover:border-amberGold/50 transition-all duration-300 group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base mb-1">Pop & Anos 80</h3>
+                    <p class="text-xs text-gray-400">Lulu Santos & Nacionais</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkBg border border-borderBg text-center hover:border-amberGold/50 transition-all duration-300 group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base mb-1">RAP Conceito</h3>
+                    <p class="text-xs text-gray-400">Marcelo D2 & Acústico</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkBg border border-borderBg text-center hover:border-amberGold/50 transition-all duration-300 group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base mb-1">Autoral</h3>
+                    <p class="text-xs text-gray-400">Lançamentos nas Redes</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Mídia: Vídeo & Áudio -->
+    <section class="py-20 bg-darkBg border-t border-borderBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Video Player Container -->
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 text-amberGold font-semibold text-xs uppercase tracking-widest mb-3">
+                        <i class="fa-solid fa-play"></i> Show Ao Vivo
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-white mb-6">Sinta a Energia da Apresentação</h2>
+                    
+                    <div class="relative rounded-2xl overflow-hidden bg-cardBg border border-borderBg shadow-2xl aspect-video group">
+                        <!-- Responsive Video Embed Placeholder -->
+                        <iframe class="w-full h-full" 
+                                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1" 
+                                title="Matheus Felipe Ao Vivo" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 italic text-right">
+                        * Vídeo demonstrativo da performance ao vivo.
+                    </p>
+                </div>
+
+                <!-- Music & Streaming Player Container -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-amberGold font-semibold text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-headphones"></i> Streaming
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-white">Trabalho Autoral</h2>
+                    <p class="text-gray-400 text-sm">
+                        Músicas lançadas em todas as plataformas digitais. Ouça os últimos lançamentos do artista.
+                    </p>
+
+                    <!-- Custom Player Card -->
+                    <div class="p-6 rounded-2xl bg-cardBg border border-borderBg space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-xl bg-amberGold/20 flex-shrink-0 flex items-center justify-center text-amberGold text-2xl font-bold">
+                                <i class="fa-solid fa-record-vinyl animate-spin" style="animation-duration: 6s;"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <span class="text-xs text-amberGold font-bold uppercase tracking-wider">Lançamento</span>
+                                <h4 class="text-white font-bold text-lg truncate">Matheus Felipe - Single Oficial</h4>
+                                <p class="text-xs text-gray-400">Casa 6 Produções</p>
+                            </div>
+                        </div>
+
+                        <!-- Player Simulation Button -->
+                        <div class="pt-2">
+                            <audio id="audio-player" class="w-full h-10 rounded-lg bg-darkBg" controls>
+                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Streaming Badges -->
+                    <div class="pt-2">
+                        <p class="text-xs uppercase text-gray-500 font-bold tracking-wider mb-3">Disponível em:</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://open.spotify.com" target="_blank" class="px-4 py-2 rounded-xl bg-cardBg border border-borderBg hover:border-green-500/50 text-gray-300 hover:text-green-400 text-xs font-semibold transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-spotify text-green-500 text-base"></i> Spotify
+                            </a>
+                            <a href="https://deezer.com" target="_blank" class="px-4 py-2 rounded-xl bg-cardBg border border-borderBg hover:border-purple-500/50 text-gray-300 hover:text-purple-400 text-xs font-semibold transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-deezer text-purple-400 text-base"></i> Deezer
+                            </a>
+                            <a href="https://youtube.com" target="_blank" class="px-4 py-2 rounded-xl bg-cardBg border border-borderBg hover:border-red-500/50 text-gray-300 hover:text-red-400 text-xs font-semibold transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-youtube text-red-500 text-base"></i> YouTube Music
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos de Shows -->
+    <section id="galeria" class="py-20 bg-cardBg border-t border-borderBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-amberGold font-semibold text-xs uppercase tracking-widest mb-3">
+                        <i class="fa-solid fa-camera"></i> Galeria
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Fotos de Registros & Shows</h2>
+                </div>
+                <p class="text-gray-400 text-sm mt-2 md:mt-0 max-w-md">
+                    Momentos no palco com a banda, iluminação e interação calorosa com o público.
                 </p>
-                <div class="flex items-center gap-6 text-sm text-zinc-300 border-t border-zinc-900 pt-6">
+            </div>
+
+            <!-- Image Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo 1 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darkBg border border-borderBg aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=800&auto=format&fit=crop" 
+                         alt="Show Matheus Felipe Palco" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Performance Ao Vivo - Palco Principal</span>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darkBg border border-borderBg aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=800&auto=format&fit=crop" 
+                         alt="Matheus Felipe com a Banda" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Formação Completa com Banda</span>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darkBg border border-borderBg aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop" 
+                         alt="Show Interação com Público" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Energia e Interação com o Público</span>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darkBg border border-borderBg aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&auto=format&fit=crop" 
+                         alt="Formação Acústica" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Formação Voz & Violão / Intimista</span>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darkBg border border-borderBg aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop" 
+                         alt="Iluminação e Som" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Estrutura de Luz e Som de Alta Qualidade</span>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-darkBg border border-borderBg aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800&auto=format&fit=crop" 
+                         alt="Bastidores Casa 6 Produções" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm">Bastidores & Equipe Casa 6</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Press Assets & Downloads (Área do Produtor/Contratante) -->
+    <section id="downloads" class="py-20 bg-darkBg border-t border-borderBg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-cardBg to-darkBg border border-amberGold/30 relative overflow-hidden shadow-2xl">
+                <!-- Accent Lighting -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-amberGold/10 rounded-full filter blur-3xl -z-0"></div>
+
+                <div class="relative z-10 text-center max-w-2xl mx-auto space-y-6">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-amberGold/20 text-amberGold flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Kit de Imprensa & Materiais para Download
+                    </h2>
+
+                    <p class="text-gray-300 text-sm sm:text-base">
+                        Facilidade para contratantes e assessoria. Baixe fotos em alta resolução (CMYK/RGB), logomarca em PNG/SVG e o Rider Técnico completo.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <a href="https://drive.google.com" target="_blank" class="p-4 rounded-xl bg-darkBg border border-borderBg hover:border-amberGold text-white font-bold text-sm flex items-center justify-center gap-3 transition-all hover:scale-105">
+                            <i class="fa-solid fa-images text-amberGold text-lg"></i>
+                            <span>Fotos em Alta Resolução (Drive)</span>
+                        </a>
+
+                        <a href="#" onclick="alert('O download do Rider Técnico estará disponível em breve ou solicite via WhatsApp!'); return false;" class="p-4 rounded-xl bg-darkBg border border-borderBg hover:border-amberGold text-white font-bold text-sm flex items-center justify-center gap-3 transition-all hover:scale-105">
+                            <i class="fa-solid fa-sliders text-amberGold text-lg"></i>
+                            <span>Rider Técnico & Mapa de Palco</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato & Booking Section -->
+    <section id="contato" class="py-20 bg-cardBg border-t border-borderBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-7 space-y-8">
                     <div>
-                        <span class="block text-2xl font-black text-white">15+</span>
-                        <span class="text-zinc-500">Anos de Carreira</span>
+                        <div class="inline-flex items-center gap-2 text-amberGold font-semibold text-xs uppercase tracking-widest mb-3">
+                            <i class="fa-solid fa-address-book"></i> Agenciamento
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+                            Vamos levar essa experiência para o seu evento?
+                        </h2>
+                        <p class="text-gray-400 mt-4 text-base">
+                            Entre em contato com a equipe da Casa 6 Produções para verificar disponibilidade de datas, orçamentos e formatos de show.
+                        </p>
                     </div>
-                    <div class="border-l border-zinc-800 pl-6">
-                        <span class="block text-2xl font-black text-white">RJ</span>
-                        <span class="text-zinc-500">Base Rio de Janeiro</span>
-                    </div>
-                    <div class="border-l border-zinc-800 pl-6">
-                        <span class="block text-2xl font-black text-white">100%</span>
-                        <span class="text-zinc-500">Presença de Palco</span>
+
+                    <!-- Info Cards -->
+                    <div class="space-y-4">
+                        <!-- Phone / Whatsapp -->
+                        <a href="https://wa.me/5521989368930" target="_blank" class="flex items-center gap-5 p-5 rounded-2xl bg-darkBg border border-borderBg hover:border-amberGold/60 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 uppercase font-bold tracking-wider">Telefone / WhatsApp</span>
+                                <p class="text-white font-bold text-lg">(21) 98936-8930</p>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:casa6producoes@gmail.com" class="flex items-center gap-5 p-5 rounded-2xl bg-darkBg border border-borderBg hover:border-amberGold/60 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 uppercase font-bold tracking-wider">E-mail Comercial</span>
+                                <p class="text-white font-bold text-lg">casa6producoes@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/Cantormatheusfelipe" target="_blank" class="flex items-center gap-5 p-5 rounded-2xl bg-darkBg border border-borderBg hover:border-amberGold/60 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-amberGold/10 text-amberGold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 uppercase font-bold tracking-wider">Instagram Oficial</span>
+                                <p class="text-white font-bold text-lg">@Cantormatheusfelipe</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl relative">
-                <div class="absolute -top-3 -right-3 bg-amber-500 text-zinc-950 font-bold text-xs uppercase px-3 py-1 rounded-full">
-                    Casa 6 Produções[cite: 2]
+
+                <!-- QR Code & Direct Box -->
+                <div class="lg:col-span-5">
+                    <div class="p-8 rounded-3xl bg-darkBg border border-borderBg text-center space-y-6 shadow-2xl">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-amberGold text-black flex items-center justify-center text-xl font-black">
+                            MF
+                        </div>
+                        <h3 class="text-white font-bold text-xl">Contato Rápido via QR Code</h3>
+                        <p class="text-xs text-gray-400">
+                            Aponte a câmera do seu celular para abrir a conversa direta com a produção.
+                        </p>
+
+                        <!-- Simulated QR Code visual from PDF -->
+                        <div class="p-4 bg-white rounded-2xl inline-block shadow-inner mx-auto">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/5521989368930" 
+                                 alt="QR Code WhatsApp Casa 6 Produções" 
+                                 class="w-44 h-44 object-contain">
+                        </div>
+
+                        <div class="pt-2">
+                            <span class="inline-block text-xs font-semibold text-amberGold bg-amberGold/10 px-4 py-2 rounded-full">
+                                CASA 6 PRODUÇÕES — Management & Eventos
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-4">A Experiência Completa</h4>
-                <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-                    Ideal para festivais, festas, casamentos, formaturas, eventos corporativos e confraternizações de todos os portes[cite: 3].
-                </p>
-                <ul class="space-y-3 text-sm text-zinc-300">
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Show Acústico ou Banda Completa</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Repertório Personalizado para o Evento</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-500"></i> Lançamentos Autorais nas Plataformas[cite: 3]</li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
-    <!-- Shows & Estilos -->
-    <section id="shows" class="py-24 px-4 bg-zinc-900/50 border-t border-zinc-900">
-        <div class="max-w-5xl mx-auto text-center mb-16">
-            <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Versatilidade</h2>
-            <h3 class="text-3xl md:text-4xl font-extrabold text-white">Estilos & Projetos</h3>
-            <p class="text-zinc-400 mt-2">Capacidade única de transitar por diversos gêneros com excelência.</p>
-        </div>
-        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
-                <i class="fa-solid fa-guitar text-2xl text-amber-500 mb-3"></i>
-                <h4 class="font-bold text-white mb-1">Sertanejo & Pier</h4>
-                <p class="text-xs text-zinc-400">Do universitário ao raiz.</p>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
-                <i class="fa-solid fa-music text-2xl text-amber-500 mb-3"></i>
-                <h4 class="font-bold text-white mb-1">MPB & Pop</h4>
-                <p class="text-xs text-zinc-400">Caetano, Lulu e contemporâneos[cite: 3].</p>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
-                <i class="fa-solid fa-drum text-2xl text-amber-500 mb-3"></i>
-                <h4 class="font-bold text-white mb-1">Retrô & Anos 80</h4>
-                <p class="text-xs text-zinc-400">Flashback e pagode clássico[cite: 2, 4].</p>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all">
-                <i class="fa-solid fa-microphone-lines text-2xl text-amber-500 mb-3"></i>
-                <h4 class="font-bold text-white mb-1">Autoral</h4>
-                <p class="text-xs text-zinc-400">Trabalho autêntico nas plataformas[cite: 3].</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeria de Fotos / Assets -->
-    <section id="fotos" class="py-24 px-4 border-t border-zinc-900 bg-zinc-950">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-end mb-12">
-            <div>
-                <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Imprensa</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Galeria & Mídia</h3>
-            </div>
-            <a href="https://drive.google.com" target="_blank" class="mt-4 md:mt-0 text-sm font-semibold text-amber-500 hover:text-amber-400 flex items-center gap-2">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Baixar Kit Completo (Fotos HD)
-            </a>
-        </div>
-        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="bg-zinc-900 h-64 rounded-2xl border border-zinc-800 flex items-center justify-center text-zinc-600">
-                <span class="text-sm">Foto de Show 01</span>
-            </div>
-            <div class="bg-zinc-900 h-64 rounded-2xl border border-zinc-800 flex items-center justify-center text-zinc-600">
-                <span class="text-sm">Foto de Show 02</span>
-            </div>
-            <div class="bg-zinc-900 h-64 rounded-2xl border border-zinc-800 flex items-center justify-center text-zinc-600">
-                <span class="text-sm">Foto de Show 03</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="py-24 px-4 bg-zinc-900/30 border-t border-zinc-900">
-        <div class="max-w-3xl mx-auto text-center bg-zinc-900 border border-zinc-800 p-8 md:p-12 rounded-3xl">
-            <h2 class="text-xs uppercase font-bold tracking-widest text-amber-500 mb-3">Booking & Management</h2>
-            <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Vamos fechar negócio?</h3>
-            <p class="text-zinc-400 mb-8">Entre em contato direto com a Casa 6 Produções para disponibilidade de datas e orçamentos.</p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://wa.me/5521989368930" target="_blank" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> (21) 98936-8930[cite: 18]
-                </a>
-                <a href="mailto:casa6producoes@gmail.com" class="w-full sm:w-auto bg-zinc-800 hover:bg-zinc-700 text-white font-semibold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
-                    <i class="fa-regular fa-envelope"></i> casa6producoes@gmail.com[cite: 18]
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-zinc-900 text-center text-xs text-zinc-600">
-        <p>&copy; Casa 6 Produções. Todos os direitos reservados. Matheus Felipe[cite: 18].</p>
+    <footer class="py-8 bg-darkBg border-t border-borderBg text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Matheus Felipe & Casa 6 Produções. Todos os direitos reservados.</p>
+            <p>EPK gerado para alta performance na Vercel.</p>
+        </div>
     </footer>
 
+    <!-- JavaScript Mobile Menu Toggle Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
-
-```
-
-Basta copiares todo este código, colá-lo no ficheiro `index.html` que criaste no GitHub e seguir para o deploy na Vercel!
